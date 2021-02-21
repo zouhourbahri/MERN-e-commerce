@@ -1,3 +1,3 @@
 {
-    "mongoUri": "mongodb+srv://zouhourbahri:20122465@e-commerce.qsytq.mongodb.net/mernapp"
+    "mongoUri": "mongodb+srv://dbUser:dbUser@e-commerce.qsytq.mongodb.net/mernapp"
 }
