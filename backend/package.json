@@ -15,5 +15,15 @@
   "bugs": {
     "url": "https://github.com/zouhourbahri/MERN-e-commerce/issues"
   },
-  "homepage": "https://github.com/zouhourbahri/MERN-e-commerce#readme"
+  "homepage": "https://github.com/zouhourbahri/MERN-e-commerce#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.3",
+    "express": "^4.17.1",
+    "express-validator": "^6.9.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.17",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0"
+  }
 }
