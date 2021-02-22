@@ -1,3 +1,4 @@
 {
-    "mongoUri": "mongodb+srv://dbUser:dbUser@e-commerce.qsytq.mongodb.net/test"
+    "mongoUri": "mongodb+srv://dbUser:dbUser@e-commerce.qsytq.mongodb.net/test",
+    "secretOrKey": "ourSecret"
 }
