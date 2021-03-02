@@ -18,6 +18,14 @@ const UserSchema = new schema({
         type:String,
         required :true,
     },
+    role: {
+        type: String,
+        enum: ['user', 'admin'],
+        default: 'user',
+    },
+    profilPicture: {
+        type: String,
+    },
 });
 
 module.exports=mongoose.model("user",UserSchema);
