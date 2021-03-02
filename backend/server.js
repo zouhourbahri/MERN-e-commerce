@@ -1,4 +1,6 @@
 const express = require('express');
+const user = require('./routes/user');
+
 const connectDB = require('./config/connectDB');
 const app = express();
 app.use(express.json());
@@ -7,7 +9,7 @@ app.use(express.json());
 connectDB();
 
 // routes
-
+app.use('/', user);
 // server
 const PORT = process.env.PORT || 7000 ;
 
