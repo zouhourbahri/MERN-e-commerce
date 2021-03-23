@@ -1,5 +1,6 @@
 const express = require('express');
 const user = require('./routes/user');
+// const profil = require('./routes/profil');
 
 const connectDB = require('./config/connectDB');
 const app = express();
@@ -9,7 +10,9 @@ app.use(express.json());
 connectDB();
 
 // routes
-app.use('/', user);
+app.use('/TUNISHOP', user);
+// app.use('/', profil);
+
 // server
 const PORT = process.env.PORT || 7000 ;
 

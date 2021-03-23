@@ -1,0 +1,22 @@
+{
+  "name": "merne_commerce",
+  "version": "1.0.0",
+  "description": "e-commerce MERN APP",
+  "main": "server.js",
+  "scripts": {
+    "server": "concurrently \"cd backend && npm run dev\" \" cd my-app && npm start\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zouhourbahri/MERN-e-commerce.git"
+  },
+  "author": "zouhour bahri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zouhourbahri/MERN-e-commerce/issues"
+  },
+  "homepage": "https://github.com/zouhourbahri/MERN-e-commerce#readme",
+  "dependencies": {
+    "concurrently": "^6.0.0"
+  }
+}
