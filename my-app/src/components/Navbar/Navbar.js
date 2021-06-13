@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaBars, FaSearch, FaShoppingCart, FaShopware } from 'react-icons/fa';
-// import SideBar from '../SideBar/SideBar';
+import SideBar from '../SideBar/SideBar';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -42,47 +42,18 @@ const Navbar = () => {
         </li>
       </ul>
       </div>
-      <div style={{display:"flex"}}>
-      {/* <SideBar /> */}
-      <div id="wrapper">
-        <nav className="navbar fixed-top" id={side? "sidebar-wrapper1" : "sidebar-wrapper"}>
-            <ul className="nav sidebar-nav">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#team">Team</a></li>
-                <li className="dropdown">
-                    <a href="#works" onClick= {()=> {setDrop(!drop)}}>
-                        Works 
-                        <span style={{marginLeft:'20px'}}>
-                        <span className="caret"></span>
-                        </span>
-                    </a>
-                    <ul className={drop? "coloring is-closed" : "coloring is-open"}>
-                    <li><a href="#pictures">Pictures</a></li>
-                    <li><a href="#videos">Videeos</a></li>
-                    <li><a href="#books">Books</a></li>
-                    <li><a href="#art">Art</a></li>
-                    <li><a href="#awards">Awards</a></li>
-                    </ul>
-                </li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#followme">Follow me</a></li>
-            </ul>
-        </nav>
-        <FaBars style={{ padding: "5px", width: "40px", height: "30px", marginTop: "50px" }}  onClick= {()=> {setSide(!side)}} className={side? "hamburger is-closed" : "hamburger is-open"}/>
-    </div>
-      <div className={side? "subnav" : "subnavOpened"}>
-        <ul className={side? 'subList subListClosed' : 'subList1 subListOpened'}>
+      <ul className="subList">
+        <li>
+        <FaBars style={{width: "35px", height: "35px", color:"rgba(202, 36, 64, 0.904)"}}  onClick= {()=> {setSide(!side)}} /> </li>
           <li > <a href="#" className='liElement'> Best Sales </a> </li>
           <li> <a href="#" className='liElement'> Last ADD </a> </li>
           <li> <a href="#" className='liElement'> Client Service </a> </li>
           <li> <a href="#" className='liElement'> High Tech </a> </li>
           <li> <a href="#" className='liElement'> Books </a> </li>
         </ul>
-      </div>
-      </div>
+      <nav className="navigationbar" id={side? "sidebar-wrapper1" : "sidebar-wrapper"}>
+        <SideBar />
+      </nav>
     </div>
   );
 }

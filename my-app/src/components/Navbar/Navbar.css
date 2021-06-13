@@ -3,6 +3,7 @@
     background-color: rgb(54, 54, 54);
     display: flex;
     align-items: center;
+    z-index: 1;
 }
 .searchZone {
     background-color: white;
@@ -93,36 +94,15 @@ input[type="text"]:focus{
 }
 
 /*SubNavigation */ 
-.subnav{
-    display: flex;
-    align-items: center;
-    padding:0px 10px 0px 10px;
-    margin-left: 35px;
-    width: 100%;
-    height: 35px;
-}
-.subnavOpened{
-    padding:0px 10px 0px 10px;
-    margin-left: 214px;
-    width: 100%;
-    height: 35px;
-    display: flex;
-    align-items: center;
-}
+
 .subList{
     display: flex;
     justify-content: space-between;
     width: 100%;
     list-style: none;
-    margin: 0px 70px;
-}
-
-.subList1{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    list-style: none;
-    margin: 0px 70px;
+    overflow-x: hidden;
+    margin:0;
+    padding: 10px 350px 10px 10px;
 }
 
 .subElement{
@@ -130,246 +110,12 @@ input[type="text"]:focus{
     align-items: center;
 }
 .liElement{
-    color: rgb(231, 151, 54);
+    color: rgba(202, 36, 64, 0.904);
     font-size: 1.1rem;
     font-weight: sans-serif;
 }
 .liElement:hover{
-    /* color: rgb(247, 204, 151); */
-    color: rgb(231, 151, 54);
+    color: rgba(202, 36, 64, 0.904);
     text-decoration: none;
 }
 
-/* sideBar */
-#wrapper {
-    padding-left: 0;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease; 
-}
-
-#wrapper.toggled {
-    padding-left: 220px;
-}
-
-#sidebar-wrapper {
-    z-index: 1000;
-    left: 220px;
-    width: 0;
-    height: 100%;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-#sidebar-wrapper1 {
-    -webkit-transform: translate3d(0px, 0px,0px);
-    transform: translate3d(0px, 0px, 0px);
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-    margin-left: -220px;
-    z-index: 1;
-}
-.coloring.is-closed{
-    display: none;
-}
-
-.coloring.is-open {
-    -webkit-transform: translate3d(0px, 0px,0px);
-    transform: translate3d(0px, 0px, 0px);
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-}
-
-.coloring li a{
-    color:rgb(110, 110, 110);
-    z-index: 1;
-    }
-
-.coloring li a:hover{
-    color:rgb(51, 51, 51);
-    z-index: 1;
-}
-
-#wrapper.toggled #sidebar-wrapper {
-    width: 220px;
-}
-
-#wrapper.toggled {
-    position: absolute;
-    margin-right: -220px;
-}
-
-  /*     Sidebar nav styles        */
-
-.navbar {
-    padding: 0;
-    margin-top: 37px;
-}
-
-.sidebar-nav {
-    position: absolute;
-    top: 0;
-    width: 220px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    z-index: 1;
-}
-
-.sidebar-nav li {
-    content: "";
-    position: absolute;
-    position: relative;
-    line-height: 20px;
-    display: inline-block;
-    width: 90%;
-    -webkit-transition: width 0.2s ease-in;
-    -moz-transition: width 0.2s ease-in;
-    -ms-transition: width 0.2s ease-in;
-    transition: width 0.2s ease-in;
-}
-
-
-.sidebar-nav li:hover {
-    background: rgba(196, 197, 197, 0.219) !important;
-    margin-left: 10px;
-} 
-
-.sidebar-nav li:hover:before,
-.sidebar-nav li.open:hover:before {
-    width: 100%;
-    -webkit-transition: width 0.2s ease-in;
-    -moz-transition: width 0.2s ease-in;
-    -ms-transition: width 0.2s ease-in;
-    transition: width 0.2s ease-in;
-}
-
-.sidebar-nav li a {
-    display: block;
-    text-decoration: none;
-    padding: 10px 15px 10px 30px;
-}
-
-.sidebar-nav .dropdown-menu {
-    position: relative;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    border-radius: 0;
-    border: none;
-    background-color: #222;
-    box-shadow: none;
-}
-.dropdown-menu.show {
-    top: 0;
-}
-/*Fontawesome icons*/
-.nav.sidebar-nav li a::before {
-    font-family: fontawesome;
-    content: "\f12e";
-    vertical-align: baseline;
-    display: inline-block;
-    padding-right: 5px;
-    font-size:25px;
-    margin:5px;
-}
-a[href*="#home"]::before {
-    content: "\f015" !important;
-}
-a[href*="#about"]::before {
-    content: "\f129" !important;
-}
-a[href*="#events"]::before {
-    content: "\f073" !important;
-}
-a[href*="#events"]::before {
-    content: "\f073" !important;
-}
-a[href*="#team"]::before {
-    content: "\f0c0" !important;
-}
-a[href*="#works"]::before {
-    content: "\f0b1" !important;
-}
-a[href*="#pictures"]::before {
-    content: "\f03e" !important;
-}
-a[href*="#videos"]::before {
-    content: "\f03d" !important;
-}
-a[href*="#books"]::before {
-    content: "\f02d" !important;
-}
-a[href*="#art"]::before {
-    content: "\f1fc" !important;
-}
-a[href*="#awards"]::before {
-    content: "\f02e" !important;
-}
-a[href*="#services"]::before {
-    content: "\f013" !important;
-}
-a[href*="#contact"]::before {
-    content: "\f086" !important;
-}
-a[href*="#followme"]::before {
-    content: "\f099" !important;
-    color: #0084b4;
-}
-
-  /*       Hamburger-Cross         */
-
-.hamburger {
-    position: fixed;
-    top: 20px;
-    z-index: 999;
-    display: block;
-    width: 32px;
-    height: 32px;
-    background: transparent;
-    border: none;
-    /* color: rgb(247, 204, 151); */
-    color: rgb(231, 151, 54);
-}
-
-.hamburger:hover,
-.hamburger:focus,
-.hamburger:active {
-    outline: none;
-}
-
-.hamburger.is-closed, .subListClosed{
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-}
-
-.hamburger.is-closed,
-.hamburger.is-open {
-    position: absolute;
-    left: 0;
-    height: 4px;
-    width: 100%;
-    content: "";
-    display: block;
-    font-size: 14px;
-    line-height: 32px;
-    text-align: center;
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-}
-
-.hamburger.is-open{
-    -webkit-transform: translate3d(170px, 0px,0px);
-    transform: translate3d(170px, 0px, 0px);
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-}
-
-.subListOpened{
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-    width: 100%;
-}
