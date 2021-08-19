@@ -3,7 +3,7 @@ const authentificationRoute = require('./routes/authentification');
 
 const connectDB = require('./config/connectDB');
 const app = express();
-app.use(express.json());
+app.use(express.json()); // parsing response
 
 connectDB.connectDB(); // connect to DB
 

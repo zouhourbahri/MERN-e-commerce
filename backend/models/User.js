@@ -21,6 +21,14 @@ const UserSchema = new schema({
         type: mongoose.Schema.ObjectId,
         ref: 'Role',
     }],
+    vehicule: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'Vehicule',
+    },
+    products: [{
+        type: mongoose.Schema.ObjectId,
+        ref: 'Product',
+    }],
     profilPicture: {
         type: String,
     },
