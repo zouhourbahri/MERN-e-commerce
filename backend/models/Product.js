@@ -18,14 +18,14 @@ const ProductSchema = new schema({
         type: Number,
         // required: true,
     },
-    CreerLe: {
-        type: Date,
-        default: Date.now,
-    },
-    modifierLe: {
-        type: Date,
-        default: Date.now,
-    },
+    // CreerLe: {
+    //     type: Date,
+    //     default: Date.now,
+    // },
+    // modifierLe: {
+    //     type: Date,
+    //     default: Date.now,
+    // },
     productPictures: [
         { img: { type: String } }
     ],
@@ -35,6 +35,6 @@ const ProductSchema = new schema({
             ref: 'User',
         },
     }]
-});
+}, { timestamps: {} });
 
 module.exports = mongoose.model("product", ProductSchema);

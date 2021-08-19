@@ -37,14 +37,17 @@ const UserSchema = new schema({
         type: String,
         // required: true
     },
-    CreerLe: {
-        type: Date,
-        default: Date.now,
-    },
-    modifierLe: {
-        type: Date,
-        default: Date.now,
-    },
-});
+    // CreerLe: {
+    //     type: Date,
+    //     default: Date.now,
+    // },
+    // modifierLe: {
+    //     type: Date,
+    //     default: Date.now,
+    // },
+}, { timestamps: {} });
 
+UserSchema.pre('save', async(user) => {
+
+})
 module.exports = mongoose.model("user", UserSchema);

@@ -6,18 +6,18 @@ const RoleSchema = new schema({
         type: String,
         required: true,
     },
-    CreerLe: {
-        type: Date,
-        default: Date.now,
-    },
-    modifierLe: {
-        type: Date,
-        default: Date.now,
-    },
+    // CreerLe: {
+    //     type: Date,
+    //     default: Date.now,
+    // },
+    // modifierLe: {
+    //     type: Date,
+    //     default: Date.now,
+    // },
     permissions: [{
         type: mongoose.Schema.ObjectId,
         ref: 'Permission',
     }, ],
-});
+}, { timestamps: {} });
 
 module.exports = mongoose.model("Role", RoleSchema);
