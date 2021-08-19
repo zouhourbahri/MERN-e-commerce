@@ -1,5 +1,5 @@
 const express = require('express');
-const user = require('./routes/user');
+const authentificationRoute = require('./routes/authentification');
 
 const connectDB = require('./config/connectDB');
 const app = express();
@@ -8,7 +8,7 @@ app.use(express.json());
 connectDB.connectDB(); // connect to DB
 
 // routes
-app.use('/TUNISHOP', user);
+app.use('/auth', authentificationRoute);
 
 // server
 const PORT = process.env.PORT || 7000;

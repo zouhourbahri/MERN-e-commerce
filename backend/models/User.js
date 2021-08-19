@@ -4,23 +4,18 @@ const schema = mongoose.Schema;
 const UserSchema = new schema({
     firstName: {
         type: String,
-        // required: true,
     },
     lastName: {
         type: String,
-        // required: true,
     },
     email: {
         type: String,
-        // required: true,
     },
     password: {
         type: String,
-        // required: true,
     },
     phone: {
         type: String,
-        // required: true
     },
     roles: [{
         type: mongoose.Schema.ObjectId,
@@ -31,20 +26,13 @@ const UserSchema = new schema({
     },
     contrat: {
         type: String,
-        // required: true
     },
     permis: {
         type: String,
-        // required: true
     },
-    // CreerLe: {
-    //     type: Date,
-    //     default: Date.now,
-    // },
-    // modifierLe: {
-    //     type: Date,
-    //     default: Date.now,
-    // },
+    adresse: {
+        type: String,
+    }
 }, { timestamps: {} });
 
 UserSchema.pre('save', async(user) => {
