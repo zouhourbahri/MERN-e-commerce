@@ -1,19 +1,18 @@
 const express = require('express');
 const user = require('./routes/user');
-// const profil = require('./routes/profil');
 
 const connectDB = require('./config/connectDB');
 const app = express();
 app.use(express.json());
 
 // connect to DB
-connectDB();
+connectDB.connectDB();
 
 // routes
 app.use('/TUNISHOP', user);
 // app.use('/', profil);
 
 // server
-const PORT = process.env.PORT || 7000 ;
+const PORT = process.env.PORT || 7000;
 
-app.listen(PORT, (error)=> error ? console.log(error) : console.log(`Server is running on localhost: ${PORT}`));
+app.listen(PORT, (error) => error ? console.log(error) : console.log(`Server is running on localhost: ${PORT}`));

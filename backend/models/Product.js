@@ -1,26 +1,33 @@
 const mongoose = require('mongoose');
 const schema = mongoose.Schema;
 
-const ProductSchema = new schema ({
+const ProductSchema = new schema({
     name: {
         type: String,
-        required: true,
+        // required: true,
     },
     price: {
         type: Number,
-        required: true,
+        // required: true,
     },
     description: {
         type: String,
-        required: true,
+        // required: true,
     },
     quantity: {
         type: Number,
-        required: true,
+        // required: true,
     },
-    lastUpdate: Date,
+    CreerLe: {
+        type: Date,
+        default: Date.now,
+    },
+    modifierLe: {
+        type: Date,
+        default: Date.now,
+    },
     productPictures: [
-        { img: { type: String}}
+        { img: { type: String } }
     ],
     visitors: [{
         userId: {
