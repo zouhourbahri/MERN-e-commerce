@@ -44,6 +44,18 @@ const UserSchema = new schema({
 }, { timestamps: {} });
 
 UserSchema.pre('save', async(user) => {
-
+    const userDB = require("../db/userDB")
+    const staticMessages = require("../staticMessages.json")
+    if (user.email) {
+        return new Promise((resolve, reject) => {
+            userDB.getUsers({ email: user.email }).then(user => {
+                reject(staticMessages.emailAlreadyExist)
+            }).catch(err => {
+                resolve(true)
+            })
+        })
+    } else {
+        return true
+    }
 })
 module.exports = mongoose.model("user", UserSchema);

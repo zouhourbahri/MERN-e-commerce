@@ -1,24 +1,15 @@
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const config = require('config');
 const User = require('../models/User');
 const userService = require("../services/authService")
 const staticMessages = require("../staticMessages.json")
+const config = require('config');
 const secretOrKey = config.get('secretOrKey');
+const authService = require("../services/authService")
 
 // Register Controller
 exports.signUp = async(req, res) => {
     try {
-        let searchedEmail = await userService.getUsers(req.body)
-            // console.log("searchedEmail", searchedEmail)
-        if (searchedEmail)
-            return res.status(400).json({ msg: 'email already exists !!' });
-        const salt = await bcrypt.genSalt(10);
-        const hash = await bcrypt.hash(req.body.password, salt);
-        req.body.password = hash
-        let newUser = new User(req.body)
-        await newUser.save();
-        res.status(201).json(newUser);
+        const registredUser = await authService.signUp(req.body)
+        res.status(201).json(registredUser);
     } catch (error) {
         res.status(500).json({ errors: error });
     }
