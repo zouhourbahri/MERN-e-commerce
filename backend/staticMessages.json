@@ -1,3 +1,5 @@
 {
-    "emailAlreadyExist": "This email is on use, please signIn or enter an other email"
+    "emailAlreadyExist": "This email is on use, please signIn or enter an other email",
+    "emailDoesNotExist": "This email does not exist please verify your adress email or register",
+    "passwordDoesNotMatch": "Bad credential!!"
 }
