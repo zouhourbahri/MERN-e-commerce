@@ -1,5 +1,6 @@
 const userService = require("./userService")
 const bcrypt = require('bcryptjs');
+const User = require('../models/User');
 
 module.exports.signUp = async(query) => {
     try {
@@ -7,7 +8,7 @@ module.exports.signUp = async(query) => {
         const hash = await bcrypt.hash(query.password, salt);
         query.password = hash
         let newUser = new User(query)
-        await newUser.save();
+        return newUser.save();
         // await userService.addUsers(query)
     } catch (error) {
         throw error

@@ -43,13 +43,16 @@ const UserSchema = new schema({
     }
 }, { timestamps: {} });
 
-UserSchema.pre('save', async(user) => {
-    const userDB = require("../db/userDB")
+UserSchema.pre('save', async function(next) {
     const staticMessages = require("../staticMessages.json")
+    const userDB = require("../db/userDB")
+    let user = this
     if (user.email) {
         return new Promise((resolve, reject) => {
             userDB.getUsers({ email: user.email }).then(user => {
-                reject(staticMessages.emailAlreadyExist)
+                if (user.length)
+                    reject(staticMessages.emailAlreadyExist)
+                resolve(true)
             }).catch(err => {
                 resolve(true)
             })
